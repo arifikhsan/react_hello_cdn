@@ -14,7 +14,16 @@
         };
 
         handleClick(event) {
-          console.log(event.target)
+          // console.log(event.target);
+          console.log(this)
+        }
+
+        handleMouseOver(event) {
+          console.log(event, event.pageX);
+        }
+
+        handleCopy(event) {
+          console.log('Try being original for once!')
         }
 
         render() {
@@ -23,8 +32,12 @@
           return (
             <div>
               <h1>Hello World!</h1>
-              <p>My name is: {name}, and i am {age}</p>
+              <p>
+                My name is: {name}, and i am {age}
+              </p>
               <button onClick={this.handleClick}>Click Me</button>
+              <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+              <p onCopy={this.handleCopy}>What we think, we become</p>
             </div>
           );
         }
